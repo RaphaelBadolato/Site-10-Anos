@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verificação de Datas</title>
+    <style>
+        @font-face {
+            font-family: 'Love';
+            src: url('Metalina.otf') format('opentype');
+        }
+        body {
+            font-family: Love, Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 97vh;
+            background-color: #ff007f;
+            background: url(cora.webp);
+            background-position: center;
+            background-repeat: no-repeat; 
+            background-size: cover;
+            
+
+        }
+        .container {
+            color: rgb(255, 200, 222);
+            padding: 20px;
+            text-align: center;
+        }
+        input[type="date"] {
+            display: block;
+            margin-bottom: 15px;
+            padding: 10px;
+            width: 100%;
+            box-sizing: border-box;
+            background-color: rgb(255, 200, 222);
+        }
+        #continueBtn {
+            display: none;
+            padding: 10px 20px;
+            background-color: rgb(255, 200, 222);
+            color: rgb(255, 0, 0);
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        h3{
+            font-size: 26px;
+        }
+        a{
+            text-decoration: none;
+            color: rgb(255, 0, 0);
+            
+        }
+        a:hover{
+            font-size: 18px;
+            transition: .5s;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>As Datas Mais Importantes:</h1>
+        <h3>Data Namoro:</h3>
+        <input type="date" id="date1">
+        <h3>Data Casamento:</h3>
+        <input type="date" id="date2">
+        <button id="continueBtn"><a href="homenagem.html">Feliz 10 Anos Juntos</a></button>
+    </div>
+
+    <script>
+        const date1Input = document.getElementById('date1');
+        const date2Input = document.getElementById('date2');
+        const continueBtn = document.getElementById('continueBtn');
+
+        date1Input.addEventListener('input', validateDates);
+        date2Input.addEventListener('input', validateDates);
+
+        function validateDates() {
+            const date1 = date1Input.value;
+            const date2 = date2Input.value;
+
+            if (date1 === '2014-09-09' && date2 === '2018-12-01') {
+                continueBtn.style.display = 'inline';
+            } else {
+                continueBtn.style.display = 'none';
+            }
+        }
+    </script>
+</body>
+</html>
